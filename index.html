@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>General Knowledge Quiz</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400..800;1,9..40,400..800&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="background-decorations">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+  </div>
+
+  <main class="quiz-container">
+    <!-- START SCREEN -->
+    <section id="start-screen" class="screen active">
+      <div class="badge">🧠 Trivia Challenge</div>
+      <h1 class="title">General Knowledge Quiz</h1>
+      <p class="subtitle">Test your intellect across 10 fun and challenging questions!</p>
+      
+      <div class="quiz-info-grid">
+        <div class="info-pill">
+          <span class="icon">❓</span>
+          <div>
+            <strong>10 Questions</strong>
+            <small>Multiple Choice</small>
+          </div>
+        </div>
+        <div class="info-pill">
+          <span class="icon">⏱️</span>
+          <div>
+            <strong>15s / Question</strong>
+            <small>Speed counts</small>
+          </div>
+        </div>
+      </div>
+
+      <div class="high-score-banner" id="start-high-score">
+        <span class="trophy-icon">🏆</span>
+        <span>High Score: <strong id="high-score-value">0 / 10</strong></span>
+      </div>
+
+      <button id="start-btn" class="btn btn-primary btn-large">
+        <span>Start Quiz</span>
+        <svg class="arrow-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="5" y1="12" x2="19" y2="12"></line>
+          <polyline points="12 5 19 12 12 19"></polyline>
+        </svg>
+      </button>
+    </section>
+
+    <!-- QUIZ PLAY SCREEN -->
+    <section id="quiz-screen" class="screen">
+      <header class="quiz-header">
+        <div class="progress-info">
+          <span class="progress-label">Question</span>
+          <span class="progress-numbers">
+            <strong id="current-question-num">1</strong> / <span id="total-questions-num">10</span>
+          </span>
+        </div>
+        <div class="timer-badge" id="timer-badge">
+          <svg class="timer-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"></circle>
+            <polyline points="12 6 12 12 16 14"></polyline>
+          </svg>
+          <span id="timer-text">15s</span>
+        </div>
+      </header>
+
+      <div class="progress-bar-track">
+        <div class="progress-bar-fill" id="progress-bar"></div>
+      </div>
+
+      <div class="question-container">
+        <h2 id="question-text" class="question-title">Loading question...</h2>
+      </div>
+
+      <div id="options-container" class="options-grid">
+        <!-- Dynamically populated options -->
+      </div>
+
+      <footer class="quiz-footer">
+        <div id="feedback-msg" class="feedback-msg"></div>
+        <button id="next-btn" class="btn btn-primary" style="display: none;">
+          <span>Next Question</span>
+          <svg class="arrow-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </button>
+      </footer>
+    </section>
+
+    <!-- RESULT SCREEN -->
+    <section id="result-screen" class="screen">
+      <div class="result-icon-container">
+        <div class="result-emoji" id="result-emoji">🎉</div>
+      </div>
+      <h2 class="title">Quiz Completed!</h2>
+      <p class="subtitle" id="result-message">Great job completing the challenge!</p>
+
+      <div class="score-card">
+        <div class="score-label">Your Final Score</div>
+        <div class="score-number-wrapper">
+          <span class="score-big" id="final-score">0</span>
+          <span class="score-divider">/</span>
+          <span class="score-total" id="final-total">10</span>
+        </div>
+        <div class="score-percentage-badge" id="score-percentage">0% Accuracy</div>
+      </div>
+
+      <div class="high-score-banner" id="result-high-score-banner">
+        <span class="trophy-icon">🏆</span>
+        <span id="result-high-score-text">High Score: 0 / 10</span>
+      </div>
+
+      <div class="result-actions">
+        <button id="restart-btn" class="btn btn-primary btn-large">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="1 4 1 10 7 10"></polyline>
+            <path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"></path>
+          </svg>
+          <span>Play Again</span>
+        </button>
+        <button id="home-btn" class="btn btn-secondary">
+          <span>Home Screen</span>
+        </button>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
